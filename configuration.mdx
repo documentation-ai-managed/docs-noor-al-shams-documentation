@@ -1,0 +1,139 @@
+---
+title: Platform Configuration
+description: Customize your documentation space with settings for branding, permissions, and advanced features.
+---
+
+## Overview
+
+Configure your Noor Al Shams documentation space to match your brand and control access. Access these settings from the admin dashboard under `Settings > Configuration`. You can update branding instantly, manage user roles, and connect third-party integrations without downtime.
+
+<Columns cols={3}>
+  <Card title="Branding" icon="palette" href="#branding-and-themes">
+    Apply custom colors, logos, and themes.
+  </Card>
+  <Card title="Permissions" icon="shield" href="#user-permissions">
+    Define roles and access levels for teams.
+  </Card>
+  <Card title="Integrations" icon="plug" href="#integration-settings">
+    Connect analytics, auth providers, and webhooks.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Save changes and preview them in a sandbox mode before publishing to avoid disrupting live users.
+</Callout>
+
+## Branding and Themes
+
+Customize the visual identity of your docs with themes and assets.
+
+### Apply Brand Colors
+
+Set your primary brand color to `#3B82F6` for consistency.
+
+<Steps>
+  <Step title="Navigate to Branding" icon="palette">
+    Go to `Settings > Branding`.
+  </Step>
+  <Step title="Update Colors" icon="droplet">
+    Enter hex values for primary, secondary, and accent colors.
+  </Step>
+  <Step title="Upload Logo" icon="upload">
+    Add your logo (PNG or SVG, max 500KB).
+  </Step>
+  <Step title="Preview and Save" icon="eye">
+    Preview the theme and publish.
+  </Step>
+</Steps>
+
+### Theme Configuration
+
+Edit the `theme.json` file for advanced styling.
+
+<CodeGroup tabs="JSON,YAML">
+  ```json
+  {
+    "primaryColor": "#3B82F6",
+    "fontFamily": "Inter, sans-serif",
+    "sidebarWidth": "280px",
+    "darkMode": true
+  }
+  ```
+  ```yaml
+  primaryColor: "#3B82F6"
+  fontFamily: "Inter, sans-serif"
+  sidebarWidth: 280px
+  darkMode: true
+  ```
+</CodeGroup>
+
+## User Permissions
+
+Control who can view, edit, or admin your documentation.
+
+| Role       | View | Edit | Delete | Admin |
+|------------|------|------|--------|-------|
+| Viewer     | ✅   | ❌   | ❌     | ❌    |
+| Editor     | ✅   | ✅   | ❌     | ❌    |
+| Admin      | ✅   | ✅   | ✅     | ✅    |
+
+<Tabs>
+  <Tab title="Invite Users" icon="users">
+    1. Go to `Team > Members`.
+    2. Enter email and select role.
+    3. Send invite link.
+  </Tab>
+  <Tab title="Role Permissions" icon="settings">
+    Customize per project:
+    
+    ```javascript
+    const permissions = {
+      viewer: ['read'],
+      editor: ['read', 'write'],
+      admin: ['read', 'write', 'delete', 'manage']
+    };
+    ```
+  </Tab>
+</Tabs>
+
+<Expandable title="Advanced Permission Rules" default-open="false">
+  Use regex patterns for path-based access:
+  
+  ```javascript
+  {
+    "path": "/docs/private/*",
+    "roles": ["admin"]
+  }
+  ```
+</Expandable>
+
+## Integration Settings
+
+Connect external services for analytics, auth, and notifications.
+
+### Enable Google Analytics
+
+<Steps>
+  <Step title="Get Tracking ID" icon="external-link">
+    Create property in Google Analytics.
+  </Step>
+  <Step title="Add to Settings" icon="plus">
+    Paste `G-XXXXXXXXXX` into `Integrations > Analytics`.
+  </Step>
+</Steps>
+
+### Webhook Setup
+
+Configure outgoing webhooks for events like page updates.
+
+```javascript
+{
+  "url": "https://your-webhook.example.com/events",
+  "events": ["page.create", "page.update"],
+  "secret": "YOUR_WEBHOOK_SECRET"
+}
+```
+
+<Callout kind="alert">
+  Test webhooks in sandbox mode first to verify payloads.
+</Callout>

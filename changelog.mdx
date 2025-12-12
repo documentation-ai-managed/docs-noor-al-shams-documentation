@@ -1,0 +1,136 @@
+---
+title: Changelog
+description: A history of updates and new features released for Noor Al Shams Documentation.
+---
+
+## Changelog Overview
+
+Noor Al Shams Documentation keeps you informed with regular updates that enhance your documentation experience. Review the latest releases below to see new features, improvements, and bug fixes. You can track changes across versions and integrate them into your workflows.
+
+<Callout kind="info">
+  Subscribe to our RSS feed or GitHub notifications to receive instant alerts on new releases.
+</Callout>
+
+<Columns cols={3}>
+  <Card title="Latest" icon="zap" href="#v1-2-0">
+    v1.2.0 - Enhanced MDX parsing and new components.
+  </Card>
+  <Card title="Previous" icon="trending-up" href="#v1-1-0">
+    v1.1.0 - Improved search and theming.
+  </Card>
+  <Card title="Full History" icon="book-open" href="/changelog/archive">
+    Browse all past releases.
+  </Card>
+</Columns>
+
+## Staying Updated
+
+Follow these steps to ensure you always use the latest version of Noor Al Shams Documentation.
+
+<Steps>
+  <Step title="Check Releases" icon="git-branch">
+    Visit the changelog page regularly or set up webhooks.
+  </Step>
+  <Step title="Update Package" icon="package">
+    Run the update command for your package manager.
+  </Step>
+  <Step title="Review Breaking Changes" icon="alert-triangle">
+    Scan tags like `breaking` before upgrading.
+  </Step>
+</Steps>
+
+<Tabs>
+  <Tab title="npm" icon="package">
+    ```bash
+    npm update @noor-al-shams/docs
+    ```
+  </Tab>
+  <Tab title="yarn" icon="package">
+    ```bash
+    yarn upgrade @noor-al-shams/docs
+    ```
+  </Tab>
+  <Tab title="pnpm" icon="package">
+    ```bash
+    pnpm update @noor-al-shams/docs
+    ```
+  </Tab>
+</Tabs>
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added `<Columns>` component support for responsive grids up to 5 columns.
+- Introduced `<Video>` and `<Iframe>` embeds with customizable dimensions.
+
+## Improvements
+
+- Enhanced Mermaid diagram rendering with better error handling for complex graphs.
+- Optimized parsing speed for pages with nested JSX components by 40%.
+
+## Bug Fixes
+
+- Fixed line number display in `<CodeGroup>` when `show-lines="true"`.
+- Resolved escaping issues for `{` and `}` in prose text.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- New `<ParamField>` and `<ResponseField>` for API documentation sidebars.
+- Support for `tags` arrays in `<Update>` components with color-coded badges.
+
+## Bug Fixes
+
+- Corrected attribute parsing for kebab-case props like `default-open`.
+- Fixed nested code block rendering using 4 backticks properly.
+
+Here's an example of a fixed code pattern:
+
+<CodeGroup tabs="Before,After">
+  ```jsx
+  // Before: Parsing error with raw { }
+  <Card title="Title" icon={star} />
+  ```
+  ```jsx
+  // After: Correct string attributes
+  <Card title="Title" icon="star" />
+  ```
+</CodeGroup>
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Initial release with core MDX components: `<Callout>`, `<Card>`, `<Steps>`, and more.
+- Full YAML frontmatter validation with no-blank-line enforcement.
+
+## Breaking Changes
+
+- Removed H1 support in body content; always start with H2.
+- Standardized all attributes to double quotes only.
+
+## Improvements
+
+- Added Lucide icon integration with 100+ available icons.
+
+</Update>
+
+<ExpandableGroup>
+  <Expandable title="How to Contribute Changes" default-open="false">
+
+    You can submit pull requests for documentation improvements.
+
+    1. Fork the repository.
+    2. Create a branch: `git checkout -b feature/new-component`.
+    3. Add your `<Update>` entry following the format above.
+    4. Test parsing locally.
+    5. Submit a PR.
+
+  </Expandable>
+</ExpandableGroup>

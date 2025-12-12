@@ -1,0 +1,107 @@
+---
+title: Frequently Asked Questions
+description: Common questions and answers about using Noor Al Shams, from basic usage to troubleshooting tips.
+---
+
+## Account Management
+
+Manage your Noor Al Shams account easily with these common procedures. You control access, security, and settings directly from the dashboard.
+
+<Columns cols={2}>
+  <Card title="Create Account" icon="user-plus" href="#">
+    Sign up in under 2 minutes.
+  </Card>
+  <Card title="Reset Password" icon="key" href="#">
+    Recover access securely.
+  </Card>
+</Columns>
+
+<ExpandableGroup>
+  <Expandable title="How do I create a new account?">
+    Visit the sign-up page and provide your email, name, and password. Verify your email to activate. Noor Al Shams supports SSO with Google and GitHub for faster onboarding.
+  </Expandable>
+
+  <Expandable title="What if I forget my password?" default-open="true">
+    Click "Forgot Password?" on the login screen. Enter your email, and follow the reset link sent within 60 seconds. Use a strong password with at least 12 characters.
+  </Expandable>
+
+  <Expandable title="How do I update my billing information?">
+    Go to Account Settings > Billing. Add your payment method and save. You receive email confirmations for all changes.
+  </Expandable>
+</ExpandableGroup>
+
+<Callout kind="tip">
+  Enable two-factor authentication (2FA) in Security settings to protect your account from unauthorized access.
+</Callout>
+
+## Content Collaboration
+
+Collaborate seamlessly with your team on documentation projects. Invite members, assign roles, and track changes in real time.
+
+<Tabs>
+  <Tab title="Invite Team Members" icon="users">
+    <Steps>
+      <Step title="Navigate to Project" icon="folder">
+        Open your documentation project from the dashboard.
+      </Step>
+      <Step title="Add Collaborators" icon="user-plus">
+        Click "Share" > "Invite Member". Enter emails and select roles: Admin, Editor, or Viewer.
+      </Step>
+      <Step title="Confirm Invites" icon="check-circle">
+        Collaborators accept via email. They gain instant access.
+      </Step>
+    </Steps>
+  </Tab>
+
+  <Tab title="Manage Permissions" icon="shield">
+    Use role-based access:
+
+    | Role   | Edit Pages | Delete Content | Manage Team |
+    |--------|------------|----------------|-------------|
+    | Admin  | Yes       | Yes            | Yes        |
+    | Editor | Yes       | No             | No         |
+    | Viewer | No        | No             | No         |
+  </Tab>
+</Tabs>
+
+## Exporting Documentation
+
+Export your docs to various formats for sharing or archiving. Follow these steps for smooth exports.
+
+<Steps>
+  <Step title="Select Export" icon="download">
+    Open your project and click "Export" in the top menu.
+  </Step>
+  <Step title="Choose Format" icon="file">
+    Pick PDF, HTML, or Markdown ZIP.
+  </Step>
+  <Step title="Customize" icon="settings">
+    Set options like theme or watermarks.
+  </Step>
+  <Step title="Download" icon="arrow-down-circle">
+    Generate and download the file.
+  </Step>
+</Steps>
+
+<Tabs>
+  <Tab title="Embed Code Example" icon="code">
+    <CodeGroup tabs="HTML,React">
+      ```html
+      <iframe src="https://nooralshams.app/project/abc123/embed" width="100%" height="600"></iframe>
+      ```
+      ```jsx
+      import { Embed } from '@nooralshams/embed';
+
+      <Embed projectId="abc123" height={600} />
+      ```
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+<Callout kind="info">
+  Exports update automatically with your latest changes. For large projects (`>100` pages), use the API for bulk operations.
+</Callout>
+
+<Expandable title="Troubleshooting Export Issues">
+  If exports fail, check file size limits (`<50MB`) and internet connection. Clear cache or contact support@nooralshams.app.
+</Expandable>

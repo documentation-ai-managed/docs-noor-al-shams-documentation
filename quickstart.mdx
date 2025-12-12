@@ -1,0 +1,140 @@
+---
+title: Quickstart Guide
+description: Get up and running with Noor Al Shams in minutes, including account registration, creating your first documentation space, and initial configuration.
+---
+
+## Overview
+
+Start building your documentation with Noor Al Shams today. Follow these steps to create an account, set up your first space, and configure basic settings. You complete the process in under five minutes.
+
+<Callout kind="tip">
+  Use a strong password during registration. Enable two-factor authentication immediately after signup for added security.
+</Callout>
+
+## Get Started in 3 Steps
+
+Use the guided process below to launch your first documentation space.
+
+<Steps>
+  <Step title="Create Account" icon="user-plus">
+
+    Visit [nooralshams.com](https://nooralshams.com) and click **Sign Up**.
+
+    Fill in your details:
+
+    | Field       | Example Value              |
+    |-------------|----------------------------|
+    | Email       | user@example.com           |
+    | Password    | SecurePassword123!         |
+    | Full Name   | John Doe                   |
+
+    Verify your email and log in.
+
+  </Step>
+
+  <Step title="Create New Space" icon="plus">
+
+    From the dashboard, select **New Space**.
+
+    Enter space details:
+
+    ```
+    Name: My Project Docs
+    Description: Documentation for my app
+    Visibility: Public (or Private)
+    ```
+
+    Click **Create**. Your space appears in the sidebar.
+
+  </Step>
+
+  <Step title="Initial Configuration" icon="settings">
+
+    Navigate to **Space Settings > General**.
+
+    Update these options:
+
+    <Tabs>
+      <Tab title="Theme" icon="palette">
+
+        Set brand color to `#3B82F6`.
+
+        ```json
+        {
+          "primaryColor": "#3B82F6",
+          "fontFamily": "Inter, sans-serif"
+        }
+        ```
+
+      </Tab>
+      <Tab title="API Access" icon="key">
+
+        Generate an API key:
+
+        ```bash
+        curl -X POST https://api.nooralshams.com/v1/api-keys \
+          -H "Authorization: Bearer YOUR_ACCOUNT_TOKEN" \
+          -d '{"name": "Docs CLI"}'
+        ```
+
+        Copy the key as `{API_KEY}` for integrations.
+
+      </Tab>
+    </Tabs>
+
+  </Step>
+</Steps>
+
+## Platform-Specific Setup
+
+Install the Noor Al Shams CLI for advanced management.
+
+<CodeGroup tabs="npm,yarn,Homebrew">
+  ```bash
+  npm install -g @nooralshams/cli
+  ```
+  ```bash
+  yarn global add @nooralshams/cli
+  ```
+  ```bash
+  brew install nooralshams/tap/cli
+  ```
+</CodeGroup>
+
+Authenticate with:
+
+```bash
+nooralshams login
+# Enter your email and follow the link
+```
+
+## Next Steps
+
+Explore these resources to enhance your space.
+
+<Columns cols={3}>
+  <Card title="Add Content" icon="file-text" href="/docs/content">
+    Create pages, upload images, and organize sections.
+  </Card>
+  <Card title="Customize Theme" icon="brush" href="/docs/theme">
+    Match your brand with custom styles and layouts.
+  </Card>
+  <Card title="Collaborate" icon="users" href="/docs/team">
+    Invite team members and manage permissions.
+  </Card>
+</Columns>
+
+## Advanced Configuration
+
+<Expandable title="Environment Variables" default-open="false">
+
+Set these for local development:
+
+```bash
+export NOOR_API_KEY=your-api-key-here
+export NOOR_SPACE_ID=sp_abc123
+```
+
+</Expandable>
+
+You now have a fully functional documentation space. Publish your first page and share the link with your team.

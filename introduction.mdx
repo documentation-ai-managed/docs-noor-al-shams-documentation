@@ -1,0 +1,111 @@
+---
+title: Welcome to Noor Al Shams Documentation
+description: An overview of the Noor Al Shams documentation platform, its purpose, and how it helps teams organize and manage project documentation effectively.
+---
+
+## Overview
+
+Noor Al Shams provides a centralized platform where you create, organize, and maintain project documentation. You collaborate with your team in real-time, version control changes, and publish polished docs accessible to everyone. This space scales with your projects, from small teams to enterprise workflows.
+
+## Key Benefits
+
+Noor Al Shams streamlines your documentation process with powerful features tailored for developers, product managers, and support teams.
+
+<Columns cols={3}>
+  <Card title="Centralized Organization" icon="folder" href="/docs/organization">
+    Group docs into spaces, projects, and pages. Search across all content instantly.
+  </Card>
+  <Card title="Real-Time Collaboration" icon="users" href="/docs/collaboration">
+    Edit together, leave comments, and track changes without version conflicts.
+  </Card>
+  <Card title="Customizable Publishing" icon="globe" href="/docs/publishing">
+    Export to Markdown, PDF, or host live sites with custom domains.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Start small: Create your first space to see how Noor Al Shams adapts to your workflow.
+</Callout>
+
+## Getting Oriented with the Interface
+
+Follow these steps to navigate Noor Al Shams effectively.
+
+<Steps>
+  <Step title="Access Your Dashboard" icon="layout">
+    Log in at `https://nooralshams.example.com` and view your spaces overview.
+  </Step>
+  <Step title="Create Content" icon="plus">
+    Click the `+ New Page` button. Choose from templates like API docs or guides.
+  </Step>
+  <Step title="Customize Navigation" icon="menu">
+    Drag pages in the sidebar to reorder. Add sections for better hierarchy.
+  </Step>
+  <Step title="Publish Changes" icon="eye">
+    Preview your page, then hit `Publish` to make it live.
+  </Step>
+</Steps>
+
+## Platform-Specific Setup
+
+Set up Noor Al Shams based on your operating system or integration needs.
+
+<Tabs>
+  <Tab title="Web Browser" icon="globe">
+    Access the full editor directly. Enable dark mode in settings for late-night sessions.
+
+    ```javascript
+    // Bookmark for quick access
+    const dashboardUrl = 'https://nooralshams.example.com/dashboard';
+    ```
+  </Tab>
+  <Tab title="Git Integration" icon="git-branch">
+    Connect your repo for automatic syncs.
+
+    <CodeGroup tabs="GitHub, GitLab">
+      ```yaml
+      # .github/workflows/docs.yml
+      name: Deploy Docs
+      on: push
+      jobs:
+        deploy:
+          runs-on: ubuntu-latest
+          steps:
+            - uses: actions/checkout@v4
+            - name: Deploy to Noor Al Shams
+              run: curl -X POST https://api.nooralshams.example.com/deploy \
+                -H "Authorization: Bearer YOUR_API_KEY" \
+                -d '{"repo": "your-org/project"}'
+      ```
+      ```yaml
+      # .gitlab-ci.yml
+      deploy_docs:
+        stage: deploy
+        script:
+          - curl -X POST https://api.nooralshams.example.com/deploy \
+              -H "Authorization: Bearer YOUR_API_KEY" \
+              -d '{"repo": "your-group/project"}'
+      ```
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+## Advanced Navigation Tips
+
+<ExpandableGroup>
+  <Expandable title="Keyboard Shortcuts" default-open="true">
+    Boost productivity with these shortcuts:
+
+    | Action          | Shortcut     |
+    |-----------------|--------------|
+    | New Page        | `Cmd/Ctrl + N` |
+    | Search          | `Cmd/Ctrl + K` |
+    | Preview Toggle  | `Cmd/Ctrl + P` |
+    | Full Screen     | `F11`        |
+  </Expandable>
+  <Expandable title="Custom Workspaces">
+    Create multiple workspaces for different projects. Switch via the top bar dropdown.
+  </Expandable>
+</ExpandableGroup>
+
+This platform empowers you to build comprehensive docs that grow with your projects. Explore the sidebar to dive deeper into specific features.
